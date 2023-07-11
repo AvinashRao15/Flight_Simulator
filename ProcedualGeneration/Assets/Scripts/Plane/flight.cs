@@ -13,15 +13,6 @@ public class flight : MonoBehaviour
 
     //rigidBody
 
-    //shit that doesnt work
-    /*
-    controller
-    smooth follow cam
-    hud
-    fade black screen
-    gradual cam reset
-    */
-
     new Rigidbody rigidbody;
 
     //velocities
