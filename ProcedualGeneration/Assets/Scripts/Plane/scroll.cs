@@ -54,11 +54,11 @@ public class scroll : MonoBehaviour
 
         if((Input.GetAxis("Mouse ScrollWheel") > 0 || controller.GamePlay.X.IsPressed()) && transform.localPosition.z < -lowestDst)
         {
-            transform.localPosition += new Vector3(0,0,1);
+            transform.localPosition += new Vector3(0,0,0.1f);
         }
         if(Input.GetAxis("Mouse ScrollWheel") < 0 || controller.GamePlay.Y.IsPressed())
         {
-            transform.localPosition += new Vector3(0,0,-1);
+            transform.localPosition += new Vector3(0,0, -0.1f);
         }
     }
 }

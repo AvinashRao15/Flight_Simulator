@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Camera : MonoBehaviour
 {
@@ -48,31 +49,34 @@ public class Camera : MonoBehaviour
 
     void Update()
     {
-        if(UnityEngine.Input.GetMouseButton(0) || UnityEngine.Input.GetMouseButton(1))
+        if(Gamepad.all.Count < 1)
         {
-            deltaX = UnityEngine.Input.GetAxis("Mouse X") - lastXPosition;
-            deltaY = UnityEngine.Input.GetAxis("Mouse Y") - lastYPosition;
+            if(UnityEngine.Input.GetMouseButton(0) || UnityEngine.Input.GetMouseButton(1))
+            {
+                deltaX = UnityEngine.Input.GetAxis("Mouse X") - lastXPosition;
+                deltaY = UnityEngine.Input.GetAxis("Mouse Y") - lastYPosition;
 
 
-            lastXPosition = UnityEngine.Input.GetAxis("Mouse X");
-            lastYPosition = UnityEngine.Input.GetAxis("Mouse Y");
+                lastXPosition = UnityEngine.Input.GetAxis("Mouse X");
+                lastYPosition = UnityEngine.Input.GetAxis("Mouse Y");
 
-            deltaY *= -1;
+                deltaY *= -1;
 
-            xTotal += deltaX;
-            yTotal += deltaY;
+                xTotal += deltaX;
+                yTotal += deltaY;
 
 
-            transform.Rotate(Vector3.up, xTotal, Space.World);
-            transform.Rotate(Vector3.right, yTotal);
+                transform.Rotate(Vector3.up, xTotal, Space.World);
+                transform.Rotate(Vector3.right, yTotal);
+            }
         }
         if(UnityEngine.Input.GetMouseButton(2) || controller.GamePlay.resetCam.IsPressed())
         {
             transform.localRotation = rotation; 
         }
         
-        transform.Rotate(Vector3.up, move.x * -1, Space.World);
-        transform.Rotate(Vector3.right, move.y * 1);
+        transform.Rotate(Vector3.up, 0.5f * move.x * -1, Space.World);
+        transform.Rotate(Vector3.right, 0.5f * move.y * 1);
 
         
     }
