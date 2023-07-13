@@ -2,6 +2,34 @@
 
 ###
 
-<p align="left">World Generation:<br><br>1. Started out recursively modifying a grid to create landmasses.<br>2. Switched to Perlin Noise, a gradient noise algorithm, for generating more varied and natural-looking terrain.<br>3. Added octaves, persistence, and lacunarity to adjust and fine-tune the Perlin Noise output.<br>4. Generated a mesh representation of the terrain using the modified noise data.<br>5. Calculated UVs to make the mesh visible.<br>6. Curvumvented Unity's limit on the number of vertices in a mesh by splitting the mesh up into smaller sections.<br>7. Implemented a level of detail (LOD) system to optimize performance by reducing the vertex count for distant chunks.<br>8. Utilized a chunk system to generate terrain sections (chunks) dynamically around the viewer's position.<br>9. Addressed threading restrictions by using a queue of callbacks to perform actions from auxiliary threads on the main thread.<br><br>Flight Simulator:<br><br>1. Created a flight controller script attached to the viewer object in the land generator.<br>2. Implemented forces acting on the plane, including thrust, lift, and drag.<br>3. Handled the challenge of not having air density in the lift and drag formulas by manually fine-tuning animation curves for a realistic flight experience.<br><br>Visual Enhancements and Additional Features:<br><br>1. Added colors and textures to the mesh to improve visual appeal.<br>2. Created a custom material using a custom-made shader to apply different textures based on terrain height.<br>3. Enhanced gameplay experience by incorporating controller support using Unity's input manager.<br>4. Implemented a heads-up display (HUD) to provide essential information to the player during gameplay.<br>5. Developed a respawn system for player convenience in case of crashes.<br>6. Introduced other finishing touches and refinements.</p>
+<p align="left">World Generation:<br>
+<ul>  
+  <li>Started out recursively modifying a grid to create landmasses.</li>
+  <li>Switched to Perlin Noise, a gradient noise algorithm, for generating more varied and natural-looking terrain.</li>
+  <li>Added octaves, persistence, and lacunarity to adjust and fine-tune the Perlin Noise output.</li>
+  <li>Generated a mesh representation of the terrain using the modified noise data.</li>
+  <li>Calculated UVs to make the mesh visible.</li>
+  <li>Curvumvented Unity's limit on the number of vertices in a mesh by splitting the mesh up into smaller sections.</li>
+  <li>Implemented a level of detail (LOD) system to optimize performance by reducing the vertex count for distant chunks.</li>
+  <li>Utilized a chunk system to generate terrain sections (chunks) dynamically around the viewer's position.</li>
+  <li>Addressed threading restrictions by using a queue of callbacks to perform actions from auxiliary threads on the main thread.</li>
+</ul>
+<br>Flight Simulator:<br><br>
+<ul>
+  <li>Created a flight controller script attached to the viewer object in the land generator.</li>
+  <li>Implemented forces acting on the plane, including thrust, lift, and drag.</li>
+  <li>Handled the challenge of not having air density in the lift and drag formulas by manually fine-tuning animation curves for a realistic flight experience.</li>
+</ul>
+
+<br>Visual Enhancements and Additional Features:<br>
+<ul>
+  <li>Added colors and textures to the mesh to improve visual appeal.</li>
+  <li>Created a custom material using a custom-made shader to apply different textures based on terrain height.</li>
+  <li>Enhanced gameplay experience by incorporating controller support using Unity's input manager.</li>
+  <li>Implemented a heads-up display (HUD) to provide essential information to the player during gameplay.</li>
+  <li>Developed a respawn system for player convenience in case of crashes.</li>
+  <li>Introduced other finishing touches and refinements.</li>
+</ul>
+</p>
 
 ###
